@@ -19,6 +19,11 @@ If you encounter bugs or wish to contribute:
 <details>
   <summary></summary>
   
+### 2.0.0—26.x
+* Added support for Minecraft 26.1, 26.1.1, and 26.1.2
+* Replaced Cloth Config with YetAnotherConfigLib (YACL) for the in-game config screen
+* Added support for Minecart with Chest/Hopper and Boat/Raft with Chest
+* Removed hand animation on failed item insertion
 ### 1.0.0—1.21.x
 * Initial Release
 </details>
