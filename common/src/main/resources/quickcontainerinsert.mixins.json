@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.armaninyow.quickcontainerinsert.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"BlockInteractMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

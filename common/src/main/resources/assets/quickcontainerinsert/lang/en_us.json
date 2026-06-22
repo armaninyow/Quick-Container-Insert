@@ -1,11 +1,11 @@
 {
-	"text.autoconfig.quickcontainerinsert.title": "Quick Container Insert",
-	"text.autoconfig.quickcontainerinsert.option.enableAnimation": "Block Animation",
-	"text.autoconfig.quickcontainerinsert.option.enableAnimation.@Tooltip": "Play the decorated pot wobble animation on containers when inserting items.",
-	"text.autoconfig.quickcontainerinsert.option.transferSpeed": "Transfer Speed (ticks)",
-	"text.autoconfig.quickcontainerinsert.option.transferSpeed.@Tooltip": "Delay between each item transfer while holding Ctrl+Right Click.\n1 tick = 20 items/sec, 20 ticks = 1 item/sec",
-	"text.autoconfig.quickcontainerinsert.option.initialDelay": "Initial Delay (ticks)",
-	"text.autoconfig.quickcontainerinsert.option.initialDelay.@Tooltip": "How long you must hold Ctrl+Right Click before rapid transfer begins.",
+	"yacl3.config.quickcontainerinsert:config.category.general": "General",
+	"yacl3.config.quickcontainerinsert:config.enableAnimation": "Block Animation",
+	"yacl3.config.quickcontainerinsert:config.enableAnimation.desc": "Play the decorated pot wobble animation on containers when inserting items.",
+	"yacl3.config.quickcontainerinsert:config.transferSpeed": "Transfer Speed (ticks)",
+	"yacl3.config.quickcontainerinsert:config.transferSpeed.desc": "Delay between each item transfer while holding Ctrl+Right Click.\n1 tick = 20 items/sec, 20 ticks = 1 item/sec",
+	"yacl3.config.quickcontainerinsert:config.initialDelay": "Initial Delay (ticks)",
+	"yacl3.config.quickcontainerinsert:config.initialDelay.desc": "How long you must hold Ctrl+Right Click before rapid transfer begins.",
 	"tooltip.quickcontainerinsert.container_full": "%s is full",
 	"tooltip.quickcontainerinsert.item_not_allowed": "Can't insert into %s"
 }

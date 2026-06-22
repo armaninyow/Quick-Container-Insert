@@ -1,0 +1,22 @@
+{
+	"required": true,
+	"package": "com.armaninyow.quickcontainerinsert.mixin.client",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"BlockEntityRenderDispatcherMixin",
+		"BlockEntityRenderStateAccessor",
+		"BlockStateOcclusionMixin",
+		"BlockStateRenderShapeMixin",
+		"BoatRendererMixin",
+		"ChestRendererMixin",
+		"EntityRendererMixin",
+		"MinecartRendererMixin",
+		"MinecraftMixin",
+		"MultiPlayerGameModeMixin",
+		"QCISwapAnimationMixin",
+		"ShulkerBoxRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
