@@ -6,9 +6,8 @@ import net.fabricmc.api.Environment;
 @Environment(EnvType.CLIENT)
 public class QCITooltipState {
 
-	// 2 seconds total: 1.5s solid + 0.5s fade = 40 ticks
-	private static final int SOLID_TICKS = 30; // 1.5s
-	private static final int FADE_TICKS = 10;  // 0.5s
+	private static final int SOLID_TICKS = 30;
+	private static final int FADE_TICKS = 10;
 	public static final int TOTAL_TICKS = SOLID_TICKS + FADE_TICKS;
 
 	public enum TooltipType {
@@ -43,13 +42,9 @@ public class QCITooltipState {
 		return containerName;
 	}
 
-	/**
-	 * Returns alpha 0-255: fully opaque during solid phase, fading during fade phase.
-	 */
 	public static int getAlpha() {
 		if (ticksRemaining <= 0) return 0;
 		if (ticksRemaining > FADE_TICKS) return 255;
-		// Fade out: ticksRemaining goes from FADE_TICKS down to 1
 		return (int) (255f * ticksRemaining / FADE_TICKS);
 	}
 

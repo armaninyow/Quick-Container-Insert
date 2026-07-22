@@ -6,10 +6,6 @@ import net.minecraft.client.renderer.entity.state.EntityRenderState;
 
 import java.util.WeakHashMap;
 
-/**
- * Maps entity render state instances to their entity IDs so that
- * renderer mixins can look up active animations by entity ID.
- */
 @Environment(EnvType.CLIENT)
 public class QCIEntityRenderStateTracker {
 

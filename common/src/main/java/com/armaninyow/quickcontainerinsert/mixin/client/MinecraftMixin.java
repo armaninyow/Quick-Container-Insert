@@ -33,7 +33,6 @@ public class MinecraftMixin {
 		if (org.lwjgl.glfw.GLFW.glfwGetKey(handle, org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT_CONTROL)
 				!= org.lwjgl.glfw.GLFW.GLFW_PRESS) return;
 
-		// Also cancel if we're still processing a previous insert (e.g. last item)
 		if (QCIInsertState.isInserting()) {
 			ci.cancel();
 			return;

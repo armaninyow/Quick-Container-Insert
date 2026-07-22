@@ -58,7 +58,6 @@ public class QCIClientHandler {
 				return;
 			}
 
-			// ── Entity container ──────────────────────────────────────────────
 			if (hit instanceof EntityHitResult entityHit) {
 				Entity entity = entityHit.getEntity();
 				if (!(entity instanceof ContainerEntity)) {
@@ -85,7 +84,6 @@ public class QCIClientHandler {
 				return;
 			}
 
-			// ── Block container ───────────────────────────────────────────────
 			if (!(hit instanceof BlockHitResult blockHit)) {
 				reset();
 				return;
@@ -138,7 +136,6 @@ public class QCIClientHandler {
 		QCIInsertState.setInserting(false);
 	}
 
-	/** Called on failure — cancel any swing state. */
 	public static void onInsertFailure() {
 		QCIInsertState.setInserting(false);
 		Minecraft mc = Minecraft.getInstance();

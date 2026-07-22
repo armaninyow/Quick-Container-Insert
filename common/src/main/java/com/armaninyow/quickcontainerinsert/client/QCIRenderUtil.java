@@ -12,7 +12,6 @@ public final class QCIRenderUtil {
 
 	private QCIRenderUtil() {}
 
-	/** For block containers — rotates around the given block-local pivot. */
 	public static void applyWobble(PoseStack poseStack, BlockPos pos, float partialTick) {
 		if (!QCIConfig.isAnimationEnabled()) return;
 		QCIAnimationState.AnimEntry entry = QCIAnimationState.getEntry(pos);
@@ -35,7 +34,6 @@ public final class QCIRenderUtil {
 		}
 	}
 
-	/** For entity containers (boats/rafts) — rotates around origin (model center). */
 	public static void applyWobbleEntity(PoseStack poseStack, int entityId, float partialTick) {
 		if (!QCIConfig.isAnimationEnabled()) return;
 		QCIAnimationState.AnimEntry entry = QCIAnimationState.getEntityEntry(entityId);
@@ -54,7 +52,6 @@ public final class QCIRenderUtil {
 		}
 	}
 
-	/** For minecart contents — rotates around a specific pivot in block-local space. */
 	public static void applyWobbleEntityAtPivot(PoseStack poseStack, int entityId, float partialTick,
 	                                             float px, float py, float pz) {
 		if (!QCIConfig.isAnimationEnabled()) return;

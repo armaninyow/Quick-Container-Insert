@@ -10,10 +10,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * Intercepts Block.shouldRenderFace() to force rendering of faces adjacent
- * to our QCI container blocks. (1.21.2+ signature)
- */
 @Environment(EnvType.CLIENT)
 @Mixin(Block.class)
 public class BlockStateOcclusionMixin {

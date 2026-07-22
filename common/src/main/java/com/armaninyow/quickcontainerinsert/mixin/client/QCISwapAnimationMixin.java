@@ -18,13 +18,6 @@ public class QCISwapAnimationMixin {
 	@Shadow
 	private ItemStack mainHandItem;
 
-	/**
-	 * Redirects the player.getMainHandItem() call inside tick() so that
-	 * during a QCI insert we return the already-cached mainHandItem reference
-	 * instead of the new instance the server sent. This keeps the reference
-	 * comparison (this.mainHandItem != nextMainHand) false, preventing the
-	 * swap/dip animation from triggering.
-	 */
 	@Redirect(
 		method = "tick",
 		at = @At(

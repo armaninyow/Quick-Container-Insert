@@ -42,9 +42,7 @@ public class QCIAnimationState {
 		}
 	}
 
-	// Block-based animations keyed by BlockPos
 	private static final Map<BlockPos, AnimEntry> activeAnimations = new HashMap<>();
-	// Entity-based animations keyed by entity ID
 	private static final Map<Integer, AnimEntry> entityAnimations = new HashMap<>();
 
 	private static long currentTick = 0;

@@ -21,12 +21,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractMinecartRenderer.class)
 public class MinecartRendererMixin {
 
-	/**
-	 * Injects into submitMinecartContents — only the chest/hopper block wobbles.
-	 * At this point the PoseStack is in block-local space after:
-	 *   scale(0.75) + translate(-0.5, offset, 0.5) + mulPose(Y+90)
-	 * The block occupies (0,0,0)-(1,1,1) so its center is (0.5, 0.5, 0.5).
-	 */
 	@Inject(method = "submitMinecartContents", at = @At("HEAD"))
 	private void qci$injectWobble(MinecartRenderState renderState, BlockModelRenderState blockModel,
 	                               PoseStack poseStack, SubmitNodeCollector submitNodeCollector,

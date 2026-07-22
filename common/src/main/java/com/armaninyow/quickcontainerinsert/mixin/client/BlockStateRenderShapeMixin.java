@@ -11,10 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * Returns INVISIBLE for QCI container blocks so they are never baked into
- * the chunk mesh. QCIBlockEntityRenderer handles all rendering for them in 1.21.4+.
- */
 @Environment(EnvType.CLIENT)
 @Mixin(BlockBehaviour.class)
 public class BlockStateRenderShapeMixin {

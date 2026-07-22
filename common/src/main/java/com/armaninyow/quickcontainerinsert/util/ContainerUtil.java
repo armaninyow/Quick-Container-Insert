@@ -20,7 +20,7 @@ public class ContainerUtil {
 		if (block instanceof BarrelBlock) return true;
 		if (block instanceof ShulkerBoxBlock) return true;
 		if (block instanceof HopperBlock) return true;
-		if (block instanceof DispenserBlock) return true; // covers Dropper too
+		if (block instanceof DispenserBlock) return true;
 		if (block instanceof BrewingStandBlock) return true;
 		if (block instanceof EnderChestBlock) return true;
 		String name = net.minecraft.core.registries.BuiltInRegistries.BLOCK

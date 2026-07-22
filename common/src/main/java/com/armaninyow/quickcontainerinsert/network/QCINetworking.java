@@ -31,8 +31,6 @@ import net.minecraft.world.level.block.entity.*;
 
 public class QCINetworking {
 
-	// ── Payloads ──────────────────────────────────────────────────────────────
-
 	public record InsertRequestPayload(BlockPos pos, Direction face) implements CustomPacketPayload {
 		public static final Type<InsertRequestPayload> TYPE =
 			new Type<>(Identifier.fromNamespaceAndPath(QuickContainerInsert.MOD_ID, "insert_request"));
@@ -53,7 +51,6 @@ public class QCINetworking {
 		@Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
 	}
 
-	// result: 0=success, 1=full, 2=not_allowed; entityId=-1 for block containers
 	public record InsertResultPayload(BlockPos pos, int entityId, int result, String containerName) implements CustomPacketPayload {
 		public static final Type<InsertResultPayload> TYPE =
 			new Type<>(Identifier.fromNamespaceAndPath(QuickContainerInsert.MOD_ID, "insert_result"));
@@ -64,21 +61,17 @@ public class QCINetworking {
 		@Override public Type<? extends CustomPacketPayload> type() { return TYPE; }
 	}
 
-	// ── Registration ─────────────────────────────────────────────────────────
-
 	public static void registerServerPackets() {
 		PayloadTypeRegistry.serverboundPlay().register(InsertRequestPayload.TYPE, InsertRequestPayload.CODEC);
 		PayloadTypeRegistry.serverboundPlay().register(EntityInsertRequestPayload.TYPE, EntityInsertRequestPayload.CODEC);
 		PayloadTypeRegistry.clientboundPlay().register(InsertResultPayload.TYPE, InsertResultPayload.CODEC);
 
-		// ── Block container handler ───────────────────────────────────────────
 		ServerPlayNetworking.registerGlobalReceiver(InsertRequestPayload.TYPE, (payload, context) -> {
 			BlockPos pos = payload.pos();
 			Direction face = payload.face();
 			ServerPlayer player = context.player();
 
 			context.server().execute(() -> {
-				// Set flag so handleUseItemOn suppresses the vanilla GUI open
 				QCIServerInsertFlag.setInsertingBlock(player);
 				try {
 					Level level = player.level();
@@ -151,7 +144,6 @@ public class QCINetworking {
 			});
 		});
 
-		// ── Entity container handler ──────────────────────────────────────────
 		ServerPlayNetworking.registerGlobalReceiver(EntityInsertRequestPayload.TYPE, (payload, context) -> {
 			int entityId = payload.entityId();
 			ServerPlayer player = context.player();

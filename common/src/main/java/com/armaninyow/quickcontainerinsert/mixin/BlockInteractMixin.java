@@ -28,7 +28,6 @@ public class BlockInteractMixin {
 	@Inject(method = "handleUseItemOn", at = @At("HEAD"), cancellable = true)
 	private void qci$suppressGuiOnCtrlClick(ServerboundUseItemOnPacket packet, CallbackInfo ci) {
 		if (player == null) return;
-		// Only suppress if the client already sent our custom insert packet
 		if (!QCIServerInsertFlag.isInsertingBlock(player)) return;
 
 		InteractionHand hand = packet.getHand();

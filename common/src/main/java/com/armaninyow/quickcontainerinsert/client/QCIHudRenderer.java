@@ -52,7 +52,6 @@ public class QCIHudRenderer implements HudElement {
 		int x = screenWidth / 2;
 		int y = screenHeight - 72;
 
-		// Blend alpha into the red text color
 		int color = (alpha << 24) | 0xFF5555;
 		extractor.centeredText(mc.font, msg, x, y, color);
 	}

@@ -15,11 +15,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * A minimal BlockAndTintGetter that presents a single block state at one
- * position and AIR everywhere else. This prevents renderBatched from culling
- * any faces due to solid neighbors, so all 6 faces always render.
- */
 @Environment(EnvType.CLIENT)
 public class QCISingleBlockView implements BlockAndTintGetter {
 
